@@ -4,35 +4,7 @@
 >> docker build -f download-repos.docker -t repos .
 
 >> docker run -it --hostname=Rapidash-Docker --name=repos-container repos
-    >> tmux
-    * in different tmux windows:
-        >> ssh ornl-login1
-        >> ssh remus
-        * clone repos:
-            >> git config --global http.sslVerify "false"
-            >> cd /home/opt/
-            >> git clone <origin scale>
-            >> git clone <origin exnihilo>
-            >> cd exnihilo
-            >> git remote add upstream <upstream exnihilo>
-            >> git fetch upstream
-            >> cd ..
-            >> git clone <TriBITS>
-            >> git clone <Trilinos>
-            >> cd Scale/
-            >> ln -s ../exnihilo/ Exnihilo
-            >> ln -s ../TriBITS/ .
-            >> ln -s ../Trilinos/ .
-        * reset git sslVerify
-            >> git config --global http.sslVerify "true"
-            >> cd /home/opt/Scale/
-            >> git config http.sslVerify "false"
-            >> cd Exnihilo/
-            >> git config http.sslVerify "false"
-            >> cd ../Trilinos/
-            >> git config http.sslVerify "false"
-            >> cd ../TriBITS/
-            >> git config http.sslVerify "false"
+    * clone all repos that require passwords
 
     BEFORE EXITING THE INTERACTIVE SESSION SAVE CURRENT IMAGE IN ANOTHER WINDOW:
     >> docker save -o repos.save repos
