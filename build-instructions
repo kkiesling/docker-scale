@@ -1,0 +1,53 @@
+# to build:
+
+>> docker build -f ubuntu-base -t ubuntu-base .
+>> docker build -f download-repos -t repos .
+
+>> docker run -it --hostname=Rapidash-Docker --name=repos-container repos
+    >> tmux
+    * in different tmux windows:
+        >> ssh ornl-login1
+        >> ssh remus
+        * clone repos:
+            >> git config --global http.sslVerify "false"
+            >> cd /home/opt/
+            >> git clone https://localhost:65438/exnihilo/Scale.git
+            >> git clone https://localhost:65438/ki7/exnihilo.git
+            >> cd exnihilo
+            >> git remote add upstream https://localhost:65438/exnihilo/exnihilo.git
+            >> git fetch upstream
+            >> cd ..
+            >> git clone angband:/repos/mirror/TriBITS
+            >> git clone angband:/repos/mirror/Trilinos
+            >> cd Scale/
+            >> ln -s ../exnihilo/ Exnihilo
+            >> ln -s ../TriBITS/ .
+            >> ln -s ../Trilinos/ .
+        * reset git sslVerify
+            >> git config --global http.sslVerify "true"
+            >> cd /home/opt/Scale/
+            >> git config http.sslVerify "false"
+            >> cd Exnihilo/
+            >> git config http.sslVerify "false"
+            >> cd ../Trilinos/
+            >> git config http.sslVerify "false"
+            >> cd ../TriBITS/
+            >> git config http.sslVerify "false"
+
+    BEFORE EXITING THE INTERACTIVE SESSION SAVE CURRENT IMAGE IN ANOTHER WINDOW:
+    >> docker save -o repos.save repos
+    * then can exit from interactive session using ">> exit"
+
+Then to load this image with all the changes that were made during the interactive session:
+    >> docker load -i repos.save
+
+To go back into the interactive mode of that container:
+    >> docker start -i repos-container
+
+now make the image based on the container
+    >> docker commit -m "repos cloned" repos-container repos
+
+ALL REPOS SHOULD BE CLONED THAT ARE PASSWORD PROTECTED - continue with dockerfiles
+
+>> docker build -f openmpi -t openmpi .
+>> docker build -f qt -t qt .
