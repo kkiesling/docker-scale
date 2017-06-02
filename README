@@ -23,3 +23,4 @@ ALL REPOS SHOULD BE CLONED THAT ARE PASSWORD PROTECTED - continue with dockerfil
 
 >> docker build -f openmpi.docker -t openmpi .
 >> docker build -f qt.docker -t qt .
+>> docker build -f hdf5.docker -t hdf5 .
