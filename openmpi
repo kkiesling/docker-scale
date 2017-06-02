@@ -1,0 +1,26 @@
+FROM repos:latest
+MAINTAINER Kalin Kiesling (krkiesling@gmail.com)
+
+# install these because I forgot to do it the first time with the basic ubuntu
+RUN apt-get install -y --force-yes libblas-dev liblapack-dev
+
+# download openmpi source
+RUN cd /home/opt/ \
+ && mkdir tpls \
+ && cd tpls \
+ && wget https://www.open-mpi.org/software/ompi/v2.0/downloads/openmpi-2.0.3.tar.gz \
+ && tar -xzf openmpi-2.0.3.tar.gz \
+ && cd .. \
+ && ln -s tpls/openmpi-2.0.3 openmpi
+
+# create a temporary install directory based on current hostname
+RUN cd /home/opt/Scale/Exnihilo/install/rc/ \
+    && mkdir docker-rapidash
+
+# copy over install files for openmpi
+ADD ./install-files/openmpi.sh /home/opt/Scale/Exnihilo/install/rc/docker-rapidash/base.sh
+ADD ./install-files/openmpi.cmake /home/opt/Scale/Exnihilo/install/rc/docker-rapidash/base.cmake
+
+# install
+RUN cd /home/opt/Scale/Exnihilo/install/ \
+ && ./install.sh -s docker-rapidash openmpi

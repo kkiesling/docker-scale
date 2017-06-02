@@ -1,0 +1,19 @@
+FROM ubuntu:16.04
+MAINTAINER Kalin Kiesling (krkiesling@gmail.com)
+
+RUN apt-get -y --force-yes update
+RUN apt-get install -y --force-yes \
+    software-properties-common \
+    python-software-properties \
+    wget \
+    autoconf \
+    libtool \
+    libblas-dev \
+    liblapack-dev \
+    git \
+    cmake \
+    gfortran \
+    g++ \
+    tmux
+
+RUN apt-get -y --force-yes update

@@ -1,0 +1,11 @@
+FROM ubuntu-base:latest
+MAINTAINER Kalin Kiesling (krkiesling@gmail.com)
+
+RUN cd home \
+ && mkdir opt \
+ && mkdir build \
+ && mkdir install
+
+RUN mkdir /root/.ssh/
+
+ADD ssh_config /root/.ssh/config

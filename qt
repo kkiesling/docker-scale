@@ -1,0 +1,20 @@
+FROM openmpi:latest
+MAINTAINER Kalin Kiesling (krkiesling@gmail.com)
+
+# install qt dependencies
+RUN apt-get install -y --force-yes libxext-dev
+
+# download qt source
+RUN cd /home/opt/tpls \
+ && wget http://download.qt.io/archive/qt/4.8/4.8.6/qt-everywhere-opensource-src-4.8.6.tar.gz \
+ && tar -xzf qt-everywhere-opensource-src-4.8.6.tar.gz \
+ && cd .. \
+ && ln -s tpls/qt-everywhere-opensource-src-4.8.6 qt
+
+# copy over install files for qt
+ADD ./install-files/qt.sh /home/opt/Scale/Exnihilo/install/rc/docker-rapidash/base.sh
+ADD ./install-files/qt.cmake /home/opt/Scale/Exnihilo/install/rc/docker-rapidash/base.cmake
+
+# install
+RUN cd /home/opt/Scale/Exnihilo/install/ \
+ && ./install.sh -s docker-rapidash qt
