@@ -1,3 +1,6 @@
 ssh_config
 *.save
 repo-locations
+data.tar.gz
+projects/
+scale-data
