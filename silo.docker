@@ -1,4 +1,4 @@
-FROM qt:latest
+FROM hdf5:latest
 MAINTAINER Kalin Kiesling (krkiesling@gmail.com)
 
 # download silo source
