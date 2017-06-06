@@ -1,4 +1,4 @@
-ssh_config
+build-files/other-configs/ssh_config
 *.save
 repo-locations
 data.tar.gz

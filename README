@@ -4,7 +4,7 @@ Build commands should be run from ./build-files/ folder
 >> docker build -f ubuntu-base.docker -t ubuntu-base .
 >> docker build -f download-repos.docker -t repos .
 
->> docker run -it --hostname=Rapidash-Docker --name=repos-container repos
+>> docker run -it --hostname=Rapidash-Docker --name=repos-container ubuntu-base
     * clone all repos that require passwords
 
     BEFORE EXITING THE INTERACTIVE SESSION SAVE CURRENT IMAGE IN ANOTHER WINDOW:
