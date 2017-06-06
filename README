@@ -27,5 +27,7 @@ ALL REPOS SHOULD BE CLONED THAT ARE PASSWORD PROTECTED - continue with dockerfil
 >> docker build -f silo.docker -t silo .
 >> docker build -f moab.docker -t moab .
 
-From the parent directory (to included scale data)
->> docker build -f exnihilo-data.docker -t ex-data .
+Build image with data in directory above
+>> docker build -f data.docker -t data ..
+
+Now build whichever version of exnihilo is appropriate

@@ -5,7 +5,6 @@
 ## Copyright (c) 2015 Oak Ridge National Laboratory, UT-Battelle, LLC.
 ##---------------------------------------------------------------------------##
 
-# Enable DagMC - move the items with paths into a clang.cmake / gcc.cmake in rc/kieslingmac
 SET(SCALE_ENABLE_GeometriaDagMC ON CACHE BOOL "")
 SET(TPL_ENABLE_DAGMC ON CACHE BOOL "")
 SET(TPL_ENABLE_MOAB ON CACHE BOOL "")

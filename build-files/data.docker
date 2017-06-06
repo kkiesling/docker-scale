@@ -2,4 +2,4 @@ FROM moab:latest
 MAINTAINER Kalin Kiesling (krkiesling@gmail.com)
 
 # copy over scale data
-ADD ./scale-data /home/scale-data
+ADD ./scale-data /scale-data

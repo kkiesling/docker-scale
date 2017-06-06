@@ -1,0 +1,11 @@
+FROM data:latest
+MAINTAINER Kalin Kiesling (krkiesling@gmail.com)
+
+# copy over install files for exnihilo
+ADD ./other-configs/install-files/exnihilo.sh /opt/Scale/Exnihilo/install/rc/docker-rapidash/base.sh
+ADD ./other-configs/install-files/exnihilo.cmake /opt/Scale/Exnihilo/install/rc/docker-rapidash/base.cmake
+ADD ./other-configs/install-files/codes/release.cmake /opt/Scale/Exnihilo/install/codes/docker-rapidash/debug.cmake
+
+# install
+RUN cd /opt/Scale/Exnihilo/install/ \
+ && ./install.sh -s docker-rapidash Exnihilo release

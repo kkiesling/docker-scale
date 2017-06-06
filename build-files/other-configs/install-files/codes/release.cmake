@@ -9,8 +9,8 @@
 #SET(QT_QMAKE_EXECUTABLE "/opt/local/libexec/qt4/bin/qmake" CACHE STRING "")
 
 # Set data paths
-SET(SCALE_DATA_DIR     "/home/kkiesling/data/Scale/"     CACHE PATH "")
-SET(SCALE_HPC_DATA_DIR "/home/kkiesling/data/Scale/" CACHE PATH "")
+SET(SCALE_DATA_DIR     "/scale-data/"     CACHE PATH "")
+SET(SCALE_HPC_DATA_DIR "/scale-data/" CACHE PATH "")
 
 # Debug build
 SET(CMAKE_BUILD_TYPE              "RELEASE" CACHE STRING "")
