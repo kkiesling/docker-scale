@@ -2,7 +2,7 @@ FROM openmpi:latest
 MAINTAINER Kalin Kiesling (krkiesling@gmail.com)
 
 # install qt dependencies
-RUN apt-get install -y --force-yes libxext-dev
+# RUN apt-get install -y --force-yes libxext-dev
 
 # download qt source
 RUN cd /home/opt/tpls \

@@ -1,4 +1,5 @@
-# to build:
+To build, all build files are in ./build-files/
+Build commands should be run from ./build-files/ folder
 
 >> docker build -f ubuntu-base.docker -t ubuntu-base .
 >> docker build -f download-repos.docker -t repos .
@@ -26,3 +27,4 @@ ALL REPOS SHOULD BE CLONED THAT ARE PASSWORD PROTECTED - continue with dockerfil
 >> docker build -f hdf5.docker -t hdf5 .
 >> docker build -f silo.docker -t silo .
 >> docker build -f moab.docker -t moab .
+>> docker build -f exnihilo-data.docker -t ex-data .

@@ -14,6 +14,8 @@ RUN apt-get install -y --force-yes \
     cmake \
     gfortran \
     g++ \
-    tmux
+    tmux \
+    libxext-dev \
+    zlib1g-dev
 
 RUN apt-get -y --force-yes update

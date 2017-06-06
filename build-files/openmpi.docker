@@ -1,9 +1,6 @@
 FROM repos:latest
 MAINTAINER Kalin Kiesling (krkiesling@gmail.com)
 
-# install these because I forgot to do it the first time with the basic ubuntu
-RUN apt-get install -y --force-yes libblas-dev liblapack-dev
-
 # download openmpi source
 RUN cd /home/opt/ \
  && mkdir tpls \
@@ -18,8 +15,8 @@ RUN cd /home/opt/Scale/Exnihilo/install/rc/ \
     && mkdir docker-rapidash
 
 # copy over install files for openmpi
-ADD ./install-files/openmpi.sh /home/opt/Scale/Exnihilo/install/rc/docker-rapidash/base.sh
-ADD ./install-files/openmpi.cmake /home/opt/Scale/Exnihilo/install/rc/docker-rapidash/base.cmake
+ADD ../install-files/openmpi.sh /home/opt/Scale/Exnihilo/install/rc/docker-rapidash/base.sh
+ADD ../install-files/openmpi.cmake /home/opt/Scale/Exnihilo/install/rc/docker-rapidash/base.cmake
 
 # install
 RUN cd /home/opt/Scale/Exnihilo/install/ \

@@ -2,7 +2,7 @@ FROM qt:latest
 MAINTAINER Kalin Kiesling (krkiesling@gmail.com)
 
 # install hdf5 dependencies
-RUN apt-get install -y --force-yes zlib1g-dev
+# RUN apt-get install -y --force-yes zlib1g-dev
 
 # download hdf5 source
 RUN cd /home/opt/tpls \
