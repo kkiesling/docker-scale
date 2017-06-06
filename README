@@ -2,23 +2,22 @@ To build, all build files are in ./build-files/
 Build commands should be run from ./build-files/ folder
 
 >> docker build -f ubuntu-base.docker -t ubuntu-base .
->> docker build -f download-repos.docker -t repos .
 
 >> docker run -it --hostname=Rapidash-Docker --name=repos-container ubuntu-base
     * clone all repos that require passwords
 
     BEFORE EXITING THE INTERACTIVE SESSION SAVE CURRENT IMAGE IN ANOTHER WINDOW:
-    >> docker save -o repos.save repos
+    >> docker save -o repos.save ubuntu-base
     * then can exit from interactive session using ">> exit"
+
+now make the image based on the container
+    >> docker commit -m "repos cloned" repos-container repos
 
 Then to load this image with all the changes that were made during the interactive session:
     >> docker load -i repos.save
 
 To go back into the interactive mode of that container:
     >> docker start -i repos-container
-
-now make the image based on the container
-    >> docker commit -m "repos cloned" repos-container repos
 
 ALL REPOS SHOULD BE CLONED THAT ARE PASSWORD PROTECTED - continue with dockerfiles
 
@@ -27,4 +26,6 @@ ALL REPOS SHOULD BE CLONED THAT ARE PASSWORD PROTECTED - continue with dockerfil
 >> docker build -f hdf5.docker -t hdf5 .
 >> docker build -f silo.docker -t silo .
 >> docker build -f moab.docker -t moab .
+
+From the parent directory (to included scale data)
 >> docker build -f exnihilo-data.docker -t ex-data .

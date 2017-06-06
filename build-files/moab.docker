@@ -2,7 +2,7 @@ FROM silo:latest
 MAINTAINER Kalin Kiesling (krkiesling@gmail.com)
 
 # download moab source
-RUN cd /home/opt/tpls \
+RUN cd /opt/tpls \
  && git clone https://bitbucket.org/fathomteam/moab.git \
  && cd moab \
  && git checkout Version4.9.2 \
@@ -11,9 +11,9 @@ RUN cd /home/opt/tpls \
  && ln -s tpls/moab moab
 
 # copy over install files for silo
-ADD ./install-files/moab.sh /home/opt/Scale/Exnihilo/install/rc/docker-rapidash/base.sh
-ADD ./install-files/moab.cmake /home/opt/Scale/Exnihilo/install/rc/docker-rapidash/base.cmake
+ADD ./other-configs/install-files/moab.sh /opt/Scale/Exnihilo/install/rc/docker-rapidash/base.sh
+ADD ./other-configs/install-files/moab.cmake /opt/Scale/Exnihilo/install/rc/docker-rapidash/base.cmake
 
 # install
-RUN cd /home/opt/Scale/Exnihilo/install/ \
+RUN cd /opt/Scale/Exnihilo/install/ \
  && ./install.sh -s docker-rapidash moab

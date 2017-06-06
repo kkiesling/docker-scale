@@ -23,3 +23,8 @@ RUN apt-get -y --force-yes update
 # copy over ssh config file for downloading repos later
 RUN mkdir /root/.ssh/
 ADD ./other-configs/ssh_config /root/.ssh/config
+
+# make build and install dir
+RUN cd / \
+ && mkdir install \
+ && mkdir build

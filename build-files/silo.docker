@@ -2,16 +2,16 @@ FROM hdf5:latest
 MAINTAINER Kalin Kiesling (krkiesling@gmail.com)
 
 # download silo source
-RUN cd /home/opt/tpls \
+RUN cd /opt/tpls \
  && wget https://wci.llnl.gov/content/assets/docs/simulation/computer-codes/silo/silo-4.10.2/silo-4.10.2-bsd.tar.gz \
  && tar -xzf silo-4.10.2-bsd.tar.gz \
  && cd .. \
  && ln -s tpls/silo-4.10.2-bsd silo
 
 # copy over install files for silo
-ADD ./install-files/silo.sh /home/opt/Scale/Exnihilo/install/rc/docker-rapidash/base.sh
-ADD ./install-files/silo.cmake /home/opt/Scale/Exnihilo/install/rc/docker-rapidash/base.cmake
+ADD ./other-configs/install-files/silo.sh /opt/Scale/Exnihilo/install/rc/docker-rapidash/base.sh
+ADD ./other-configs/install-files/silo.cmake /opt/Scale/Exnihilo/install/rc/docker-rapidash/base.cmake
 
 # install
-RUN cd /home/opt/Scale/Exnihilo/install/ \
+RUN cd /opt/Scale/Exnihilo/install/ \
  && ./install.sh -s docker-rapidash silo

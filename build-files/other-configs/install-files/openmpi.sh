@@ -1,9 +1,9 @@
 #! /bin/sh
 
 ## THIRD-PARTY LIBRARIES
-export source_base=/home/opt
-export prefix_base=/home/install
-export build_base=/home/bld
+export source_base=/opt
+export prefix_base=/install
+export build_base=/build
 
 gcc_base=/usr
 export CC=/usr/bin/gcc

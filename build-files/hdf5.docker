@@ -1,20 +1,17 @@
 FROM qt:latest
 MAINTAINER Kalin Kiesling (krkiesling@gmail.com)
 
-# install hdf5 dependencies
-# RUN apt-get install -y --force-yes zlib1g-dev
-
 # download hdf5 source
-RUN cd /home/opt/tpls \
+RUN cd /opt/tpls \
  && wget https://support.hdfgroup.org/ftp/HDF5/current18/src/hdf5-1.8.18.tar \
  && tar -xf hdf5-1.8.18.tar \
  && cd .. \
  && ln -s tpls/hdf5-1.8.18 hdf5
 
 # copy over install files for hdf5
-ADD ./install-files/hdf5.sh /home/opt/Scale/Exnihilo/install/rc/docker-rapidash/base.sh
-ADD ./install-files/hdf5.cmake /home/opt/Scale/Exnihilo/install/rc/docker-rapidash/base.cmake
+ADD ./other-configs/install-files/hdf5.sh /opt/Scale/Exnihilo/install/rc/docker-rapidash/base.sh
+ADD ./other-configs/install-files/hdf5.cmake /opt/Scale/Exnihilo/install/rc/docker-rapidash/base.cmake
 
 # install
-RUN cd /home/opt/Scale/Exnihilo/install/ \
+RUN cd /opt/Scale/Exnihilo/install/ \
  && ./install.sh -s docker-rapidash hdf5

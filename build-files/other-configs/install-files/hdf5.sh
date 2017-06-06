@@ -1,14 +1,14 @@
 #! /bin/sh
 
 ## THIRD-PARTY LIBRARIES
-export source_base=/home/opt
-export prefix_base=/home/install
-export build_base=/home/bld
+export source_base=/opt
+export prefix_base=/install
+export build_base=/build
 
 gcc_base=/usr
-export CC=/home/install/openmpi/bin/mpicc
-export CXX=/home/install/openmpi/bin/mpicxx
-export F90=/home/install/openmpi/bin/mpif90
+export CC=/install/openmpi/bin/mpicc
+export CXX=/install/openmpi/bin/mpicxx
+export F90=/install/openmpi/bin/mpif90
 export FC=$F90
 export F77=$F90
 export F95=$F90

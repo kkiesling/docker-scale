@@ -2,7 +2,7 @@ FROM repos:latest
 MAINTAINER Kalin Kiesling (krkiesling@gmail.com)
 
 # download openmpi source
-RUN cd /home/opt/ \
+RUN cd /opt/ \
  && mkdir tpls \
  && cd tpls \
  && wget https://www.open-mpi.org/software/ompi/v2.0/downloads/openmpi-2.0.3.tar.gz \
@@ -10,14 +10,14 @@ RUN cd /home/opt/ \
  && cd .. \
  && ln -s tpls/openmpi-2.0.3 openmpi
 
-# create a temporary install directory based on current hostname
-RUN cd /home/opt/Scale/Exnihilo/install/rc/ \
+# create an install directory hostname
+RUN cd /opt/Scale/Exnihilo/install/rc/ \
     && mkdir docker-rapidash
 
 # copy over install files for openmpi
-ADD ../install-files/openmpi.sh /home/opt/Scale/Exnihilo/install/rc/docker-rapidash/base.sh
-ADD ../install-files/openmpi.cmake /home/opt/Scale/Exnihilo/install/rc/docker-rapidash/base.cmake
+ADD ./other-configs/install-files/openmpi.sh /opt/Scale/Exnihilo/install/rc/docker-rapidash/base.sh
+ADD ./other-configs/install-files/openmpi.cmake /opt/Scale/Exnihilo/install/rc/docker-rapidash/base.cmake
 
 # install
-RUN cd /home/opt/Scale/Exnihilo/install/ \
+RUN cd /opt/Scale/Exnihilo/install/ \
  && ./install.sh -s docker-rapidash openmpi
