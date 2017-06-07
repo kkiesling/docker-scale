@@ -1,10 +1,17 @@
 FROM data:latest
 MAINTAINER Kalin Kiesling (krkiesling@gmail.com)
 
+# need to fix moab Version.h.. (really this needs to be fixed in Scale)
+RUN ln -s /install/moab/include/moab/MOABConfig.h /install/moab/include/moab/Version.h
+
+# install swig - missed in the original apt-gets
+RUN apt-get -y --force-yes update
+RUN apt-get install -y --force-yes swig python-dev
+
 # copy over install files for exnihilo
 ADD ./other-configs/install-files/exnihilo.sh /opt/Scale/Exnihilo/install/rc/docker-rapidash/base.sh
 ADD ./other-configs/install-files/exnihilo.cmake /opt/Scale/Exnihilo/install/rc/docker-rapidash/base.cmake
-ADD ./other-configs/install-files/codes/debug.cmake /opt/Scale/Exnihilo/install/codes/docker-rapidash/debug.cmake
+ADD ./other-configs/install-files/codes/debug.cmake /opt/Scale/Exnihilo/install/codes/Exnihilo/docker-rapidash/debug.cmake
 
 # install
 RUN cd /opt/Scale/Exnihilo/install/ \

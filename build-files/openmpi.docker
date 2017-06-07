@@ -15,9 +15,9 @@ RUN cd /opt/Scale/Exnihilo/install/rc/ \
     && mkdir docker-rapidash
 
 # copy over install files for openmpi
-ADD ./other-configs/install-files/openmpi.sh /opt/Scale/Exnihilo/install/rc/docker-rapidash/base.sh
-ADD ./other-configs/install-files/openmpi.cmake /opt/Scale/Exnihilo/install/rc/docker-rapidash/base.cmake
+ADD ./other-configs/install-files/openmpi.sh /opt/Scale/Exnihilo/install/rc/docker-rapidash/openmpi.sh
+ADD ./other-configs/install-files/openmpi.cmake /opt/Scale/Exnihilo/install/rc/docker-rapidash/openmpi.cmake
 
 # install
 RUN cd /opt/Scale/Exnihilo/install/ \
- && ./install.sh -s docker-rapidash openmpi
+ && ./install.sh -s docker-rapidash -t openmpi openmpi

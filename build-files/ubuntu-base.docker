@@ -16,7 +16,10 @@ RUN apt-get install -y --force-yes \
     g++ \
     tmux \
     libxext-dev \
-    zlib1g-dev
+    zlib1g-dev \
+    swig \
+    python-dev \
+    vim
 
 RUN apt-get -y --force-yes update
 

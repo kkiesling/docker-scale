@@ -17,3 +17,6 @@ ADD ./other-configs/install-files/moab.cmake /opt/Scale/Exnihilo/install/rc/dock
 # install
 RUN cd /opt/Scale/Exnihilo/install/ \
  && ./install.sh -s docker-rapidash moab
+ 
+# link the moabconfig.h to Version.h (needed to be recognized by scale)
+RUN ln -s /install/moab/include/moab/MOABConfig.h /install/moab/include/moab/Version.h

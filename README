@@ -14,6 +14,7 @@ now make the image based on the container
     >> docker commit -m "repos cloned" repos-container repos
 
 Then to load this image with all the changes that were made during the interactive session:
+(should not need to do this because it can just be committed)
     >> docker load -i repos.save
 
 To go back into the interactive mode of that container:
