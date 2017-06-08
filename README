@@ -32,3 +32,17 @@ Build image with data in directory above
 >> docker build -f data.docker -t data ..
 
 Now build whichever version of exnihilo is appropriate
+>> docker build -f exnihilo-debug.docker -t exnihilo-debug .
+
+current error message:
+96%:
+/opt/Scale/Exnihilo/packages/Shift/mc_sensitivity/Fission_Chain_Tally.cc: In member function 'virtual void shift::Fission_Chain_Tally::birth(const Particle_t&, const shift::Tally_Cache&)':
+/opt/Scale/Exnihilo/packages/Shift/mc_sensitivity/Fission_Chain_Tally.cc:91:45: error: 'class std::shared_ptr<std::vector<double> >' has no member named 'assign'
+             progenitor.response_importances.assign(b_num_responses, 0.0);
+                                             ^
+/opt/Scale/Exnihilo/packages/Shift/mc_sensitivity/Fission_Chain_Tally.cc: In member function 'virtual void shift::Fission_Chain_Tally::fission(const Particle_t&, const Fission_Site_t&, const shift::Tally_Cache&)':
+/opt/Scale/Exnihilo/packages/Shift/mc_sensitivity/Fission_Chain_Tally.cc:160:32: error: 'class std::shared_ptr<std::vector<double> >' has no member named 'assign'
+     iter->response_importances.assign(b_num_responses, 0.0);
+                                ^
+make[2]: *** [Exnihilo/packages/Shift/mc_sensitivity/CMakeFiles/Shift_mc_sensitivity.dir/Fission_Chain_Tally.cc.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
