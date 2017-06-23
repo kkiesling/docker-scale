@@ -19,7 +19,9 @@ RUN apt-get install -y --force-yes \
     zlib1g-dev \
     swig \
     python-dev \
-    vim
+    vim \
+    curl \
+    git-lfs
 
 RUN apt-get -y --force-yes update
 
