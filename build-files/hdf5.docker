@@ -3,10 +3,10 @@ MAINTAINER Kalin Kiesling (krkiesling@gmail.com)
 
 # download hdf5 source
 RUN cd /opt/tpls \
- && wget https://support.hdfgroup.org/ftp/HDF5/current18/src/hdf5-1.8.18.tar \
- && tar -xf hdf5-1.8.18.tar \
+ && wget https://support.hdfgroup.org/ftp/HDF5/current18/src/hdf5-1.8.19.tar \
+ && tar -xf hdf5-1.8.19.tar \
  && cd .. \
- && ln -s tpls/hdf5-1.8.18 hdf5
+ && ln -s tpls/hdf5-1.8.19 hdf5
 
 # copy over install files for hdf5
 ADD ./other-configs/install-files/hdf5.sh /opt/Scale/Exnihilo/install/rc/docker-rapidash/base.sh
