@@ -11,8 +11,7 @@ RUN cd /opt/ \
  && ln -s tpls/openmpi-2.0.3 openmpi
 
 # create an install directory hostname
-RUN cd /opt/Scale/Exnihilo/install/rc/ \
-    && mkdir docker-rapidash
+RUN cd /opt/Scale/Exnihilo/install/rc/
 
 # copy over install files for openmpi
 ADD ./other-configs/install-files/openmpi.sh /opt/Scale/Exnihilo/install/rc/docker-rapidash/openmpi.sh
