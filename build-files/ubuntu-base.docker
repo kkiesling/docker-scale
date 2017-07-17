@@ -20,7 +20,8 @@ RUN apt-get install -y --force-yes \
     swig \
     python-dev \
     vim \
-    curl
+    curl \
+    python-sphinx
    
 RUN apt-get -y --force-yes update
     
