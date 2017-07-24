@@ -33,4 +33,4 @@ Build image with data in directory above
 
 Now build whichever version of exnihilo is appropriate (from build-files folder)
 >> docker build -f exnihilo-debug.docker -t exnihilo-debug .
-
+>> docker build -f exnihilo-release.docker -t exnihilo-release .
