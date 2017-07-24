@@ -34,3 +34,13 @@ Build image with data in directory above
 Now build whichever version of exnihilo is appropriate (from build-files folder)
 >> docker build -f exnihilo-debug.docker -t exnihilo-debug .
 >> docker build -f exnihilo-release.docker -t exnihilo-release .
+
+## PATH
+export PATH=/install/qt/bin:/install/openmpi/bin:/install/silo/bin:/install/hdf5/bin/:install/moab/bin:$PATH
+export LD_LIBRARY_PATH=/install/qt/lib:/install/openmpi/lib:/install/silo/lib:/install/hdf5/lib/:install/moab/lib:$LD_LIBRARY_PATH
+export PATH=/install/<EXNIHILO BUILD>/bin/:$PATH
+export LD_LIBRARY_PATH=/install/<EXNIHILO BUILD>/lib/:$LD_LIBRARY_PATH
+export PYTHONPATH=/install/<EXNIHILO BUILD>/python/:$PYTHONPATH
+
+# packages needed to install for running Denovo with python
+apt-get install python-matplotlib python-h5py
