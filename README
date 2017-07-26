@@ -52,4 +52,4 @@ docker run -it --hostname=$HOSTNAME -v /path/on/host/:/path/in/docker --name=$CO
 
 EXAMPLE FOR RUNNING EXNIHILO
 docker run -it --hostname=rapidash-docker -v /home/kkiesling/Pokeball/Documents/CNERG/thesis/denovo-trial:/home/denovo-trial -v /home/kkiesling/Pokeball/Documents/CNERG/docker-scale/scale-data:/scale-data/ --name=denovo-trial exnihilo-release
->> docker run -it --hostname=rapidash-docker -v /home/kkiesling/Pokeball/Documents/CNERG/thesis/denovo-trial:/home/kalin/denovo-trial -v /home/kkiesling/Pokeball/Documents/CNERG/docker-scale/scale-data:/scale-data/ --user=kalin --name=run-ex run-exnihilo-release
+>> docker run -it --hostname=rapidash-docker -v /home/kkiesling/Pokeball/Documents/CNERG/thesis/:/home/kalin/denovo-trial -v /home/kkiesling/Pokeball/Documents/CNERG/docker-scale/scale-data:/scale-data/ --user=kalin --name=run-ex run-exnihilo-release
