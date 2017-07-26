@@ -1,4 +1,4 @@
-FROM data:latest
+FROM moab:latest
 MAINTAINER Kalin Kiesling (krkiesling@gmail.com)
 
 # copy over install files for exnihilo
