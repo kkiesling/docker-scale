@@ -28,7 +28,7 @@ ALL REPOS SHOULD BE CLONED THAT ARE PASSWORD PROTECTED - continue with dockerfil
 >> docker build -f silo.docker -t silo .
 >> docker build -f moab.docker -t moab .
 
-Build image with data in directory above
+Build image with data in directory above - DON'T NEED THIS ANYMORE - run with mount instead
 >> docker build -f data.docker -t data ..
 
 Now build whichever version of exnihilo is appropriate (from build-files folder)
@@ -44,3 +44,12 @@ export PYTHONPATH=/install/<EXNIHILO BUILD>/python/:$PYTHONPATH
 
 # packages needed to install for running Denovo with python
 apt-get install python-matplotlib python-h5py
+
+
+HOW TO MOUNT
+
+docker run -it --hostname=$HOSTNAME -v /path/on/host/:/path/in/docker --name=$CONTAINERNAME <image-name>
+
+EXAMPLE FOR RUNNING EXNIHILO
+docker run -it --hostname=rapidash-docker -v /home/kkiesling/Pokeball/Documents/CNERG/thesis/denovo-trial:/home/denovo-trial -v /home/kkiesling/Pokeball/Documents/CNERG/docker-scale/scale-data:/scale-data/ --name=denovo-trial exnihilo-release
+>> docker run -it --hostname=rapidash-docker -v /home/kkiesling/Pokeball/Documents/CNERG/thesis/denovo-trial:/home/kalin/denovo-trial -v /home/kkiesling/Pokeball/Documents/CNERG/docker-scale/scale-data:/scale-data/ --user=kalin --name=run-ex run-exnihilo-release

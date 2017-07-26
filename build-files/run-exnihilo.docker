@@ -1,0 +1,9 @@
+FROM exnihilo-release:latest
+MAINTAINER Kalin Kiesling (krkiesling@gmail.com)
+
+RUN useradd -ms /bin/bash kkiesling
+ENV HOME=/home/kkiesling
+
+# add paths to source for exnihilo
+ADD ./other-configs/exnihilo-paths $HOME/exnihilo-source
+
