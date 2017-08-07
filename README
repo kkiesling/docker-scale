@@ -35,6 +35,9 @@ Now build whichever version of exnihilo is appropriate (from build-files folder)
 >> docker build -f exnihilo-debug.docker -t exnihilo-debug .
 >> docker build -f exnihilo-release.docker -t exnihilo-release .
 
+Build the environment in which to run it:
+>> docker build -f run-exnihilo.docker -t run-exnihilo-release .
+
 ## PATH
 export PATH=/install/qt/bin:/install/openmpi/bin:/install/silo/bin:/install/hdf5/bin/:install/moab/bin:$PATH
 export LD_LIBRARY_PATH=/install/qt/lib:/install/openmpi/lib:/install/silo/lib:/install/hdf5/lib/:install/moab/lib:$LD_LIBRARY_PATH
@@ -45,11 +48,9 @@ export PYTHONPATH=/install/<EXNIHILO BUILD>/python/:$PYTHONPATH
 # packages needed to install for running Denovo with python
 apt-get install python-matplotlib python-h5py
 
-
 HOW TO MOUNT
 
 docker run -it --hostname=$HOSTNAME -v /path/on/host/:/path/in/docker --name=$CONTAINERNAME <image-name>
 
-EXAMPLE FOR RUNNING EXNIHILO
-docker run -it --hostname=rapidash-docker -v /home/kkiesling/Pokeball/Documents/CNERG/thesis/denovo-trial:/home/denovo-trial -v /home/kkiesling/Pokeball/Documents/CNERG/docker-scale/scale-data:/scale-data/ --name=denovo-trial exnihilo-release
->> docker run -it --hostname=rapidash-docker -v /home/kkiesling/Pokeball/Documents/CNERG/thesis/:/home/kalin/denovo-trial -v /home/kkiesling/Pokeball/Documents/CNERG/docker-scale/scale-data:/scale-data/ --user=kalin --name=run-ex run-exnihilo-release
+EXAMPLE FOR RUNNING EXNIHILO as user
+>> docker run -it --hostname=rapidash-docker -v /home/kkiesling/Pokeball/Documents/CNERG/thesis/:/home/kkiesling/denovo-trial -v /home/kkiesling/Pokeball/Documents/CNERG/docker-scale/scale-data:/scale-data/ --user=kkiesling --name=run-ex run-exnihilo-release
