@@ -1,9 +1,15 @@
 FROM exnihilo-release:latest
 MAINTAINER Kalin Kiesling (krkiesling@gmail.com)
 
+# install some other stuff that was forgotten about
+RUN apt-get -y --force-yes update
+RUN apt-get install -y --force-yes libhdf5-dev python-h5py python-matplotlib
+RUN apt-get -y --force-yes update
+
 RUN useradd -ms /bin/bash kkiesling
 ENV HOME=/home/kkiesling
 
 # add paths to source for exnihilo
 ADD ./other-configs/exnihilo-paths $HOME/exnihilo-source
 
+RUN echo "source $HOME/exnihilo-source" >> $HOME/.bashrc
