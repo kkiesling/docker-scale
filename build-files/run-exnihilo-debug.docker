@@ -6,6 +6,8 @@ RUN apt-get -y --force-yes update
 RUN apt-get install -y --force-yes libhdf5-dev python-h5py python-matplotlib
 RUN apt-get -y --force-yes update
 
+# add test files
+
 RUN useradd -ms /bin/bash kkiesling
 ENV HOME=/home/kkiesling
 
