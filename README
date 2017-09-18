@@ -54,5 +54,5 @@ HOW TO MOUNT
 docker run -it --hostname=$HOSTNAME -v /path/on/host/:/path/in/docker --name=$CONTAINERNAME <image-name>
 
 EXAMPLE FOR RUNNING EXNIHILO as user
->> docker run -it --hostname=rapidash-docker -v /home/kkiesling/Pokeball/Documents/CNERG/thesis/:/home/kkiesling/denovo-trial -v /home/kkiesling/Pokeball/Documents/CNERG/docker-scale/scale-data:/scale-data/ --user=kkiesling --name=run-ex run-exnihilo-release
->> docker run -it --hostname=rapidash-docker -v /home/kkiesling/Pokeball/Documents/CNERG/thesis/:/home/kkiesling/denovo-trial -v /home/kkiesling/Pokeball/Documents/CNERG/docker-scale/scale-data:/scale-data/ --user=kkiesling --name=run-ex-debug run-exnihilo-debug 
+>> docker run -it --hostname=rapidash-docker -v /home/kkiesling/Pokeball/Documents/CNERG/thesis/:/home/kkiesling/denovo-trial -v /home/kkiesling/Pokeball/Documents/CNERG/ORNL/scale-data:/scale-data/ --user=kkiesling --name=run-ex run-exnihilo-release
+>> docker run -it --hostname=rapidash-docker -v /home/kkiesling/Pokeball/Documents/CNERG/thesis/:/home/kkiesling/denovo-trial -v /home/kkiesling/Pokeball/Documents/CNERG/ORNL/scale-data:/scale-data/ --user=kkiesling --name=run-ex-debug run-exnihilo-debug 

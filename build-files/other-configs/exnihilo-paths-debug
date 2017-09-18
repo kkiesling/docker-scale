@@ -1,0 +1,8 @@
+# paths needed to run exnihilo
+
+export PATH=/install/qt/bin:/install/openmpi/bin:/install/silo/bin:/install/hdf5/bin/:install/moab/bin:$PATH
+export LD_LIBRARY_PATH=/install/qt/lib:/install/openmpi/lib:/install/silo/lib:/install/hdf5/lib/:install/moab/lib:$LD_LIBRARY_PATH
+export PATH=/install/Exnihilo-debug/bin/:$PATH
+export LD_LIBRARY_PATH=/install/Exnihilo-debug/lib/:$LD_LIBRARY_PATH
+export PYTHONPATH=/install/Exnihilo-debug/python/:$PYTHONPATH
+
