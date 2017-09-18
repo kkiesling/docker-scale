@@ -7,6 +7,13 @@ RUN apt-get install -y --force-yes libhdf5-dev python-h5py python-matplotlib
 RUN apt-get -y --force-yes update
 
 # add test files
+RUN mv /opt/Scale/Exnihilo/packages/Geometria/dagmc/test/data/box.h5m /opt/Scale/Exnihilo/packages/Geometria/dagmc/test/data/box-1.h5m 
+RUN mv /opt/Scale/Exnihilo/packages/Geometria/dagmc/test/data/three_boxes.h5m /opt/Scale/Exnihilo/packages/Geometria/dagmc/test/data/three_boxes-11.h5m 
+RUN mv /opt/Scale/Exnihilo/packages/Geometria/dagmc/test/data/three_boxes_with_mats.h5m /opt/Scale/Exnihilo/packages/Geometria/dagmc/test/data/three_boxes_with_mats-1.h5m
+ 
+ADD ./test-files/box.h5m /opt/Scale/Exnihilo/packages/Geometria/dagmc/test/data/box.h5m
+ADD ./test-files/three_boxes.h5m /opt/Scale/Exnihilo/packages/Geometria/dagmc/test/data/three_boxes.h5m
+ADD ./test-files/three_boxes_with_mats.h5m /opt/Scale/Exnihilo/packages/Geometria/dagmc/test/data/three_boxes_with_mats.h5m
 
 RUN useradd -ms /bin/bash kkiesling
 ENV HOME=/home/kkiesling

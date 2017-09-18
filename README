@@ -37,6 +37,7 @@ Now build whichever version of exnihilo is appropriate (from build-files folder)
 
 Build the environment in which to run it:
 >> docker build -f run-exnihilo.docker -t run-exnihilo-release .
+>> docker build -f run-exnihilo-debug.docker -t run-exnihilo-debug .
 
 ## PATH
 export PATH=/install/qt/bin:/install/openmpi/bin:/install/silo/bin:/install/hdf5/bin/:install/moab/bin:$PATH
@@ -54,3 +55,4 @@ docker run -it --hostname=$HOSTNAME -v /path/on/host/:/path/in/docker --name=$CO
 
 EXAMPLE FOR RUNNING EXNIHILO as user
 >> docker run -it --hostname=rapidash-docker -v /home/kkiesling/Pokeball/Documents/CNERG/thesis/:/home/kkiesling/denovo-trial -v /home/kkiesling/Pokeball/Documents/CNERG/docker-scale/scale-data:/scale-data/ --user=kkiesling --name=run-ex run-exnihilo-release
+>> docker run -it --hostname=rapidash-docker -v /home/kkiesling/Pokeball/Documents/CNERG/thesis/:/home/kkiesling/denovo-trial -v /home/kkiesling/Pokeball/Documents/CNERG/docker-scale/scale-data:/scale-data/ --user=kkiesling --name=run-ex-debug run-exnihilo-debug 
