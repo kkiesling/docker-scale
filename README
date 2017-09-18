@@ -56,3 +56,7 @@ docker run -it --hostname=$HOSTNAME -v /path/on/host/:/path/in/docker --name=$CO
 EXAMPLE FOR RUNNING EXNIHILO as user
 >> docker run -it --hostname=rapidash-docker -v /home/kkiesling/Pokeball/Documents/CNERG/thesis/:/home/kkiesling/denovo-trial -v /home/kkiesling/Pokeball/Documents/CNERG/ORNL/scale-data:/scale-data/ --user=kkiesling --name=run-ex run-exnihilo-release
 >> docker run -it --hostname=rapidash-docker -v /home/kkiesling/Pokeball/Documents/CNERG/thesis/:/home/kkiesling/denovo-trial -v /home/kkiesling/Pokeball/Documents/CNERG/ORNL/scale-data:/scale-data/ --user=kkiesling --name=run-ex-debug run-exnihilo-debug 
+
+FOR RUNNING FOR DEVELOPMENT PURPOSES:
+>> docker run -it --hostname=Rapidash-Docker --name=exnihilo-development exnihilo-debug
+>> docker commit -m "updated development" exnihilo-development exnihilo-debug
