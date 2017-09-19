@@ -11,6 +11,7 @@
 # Set data paths
 SET(SCALE_DATA_DIR     "/scale-data/" CACHE PATH "")
 SET(SCALE_HPC_DATA_DIR "/scale-data/" CACHE PATH "")
+SET(SCLIB_FILEPATH "/scale-data/scale.rev39.sclib" CACHE FILEPATH "")
 
 # Debug build
 SET(CMAKE_BUILD_TYPE              "Debug" CACHE STRING "")

@@ -47,7 +47,7 @@ export LD_LIBRARY_PATH=$prefix_base/moab/lib:$LD_LIBRARY_PATH
 export CMAKE_PREFIX_PATH=$prefix_base/openmpi:$prefix_base/qt:$prefix_base/hdf5:$prefix_base/silo:$prefix_base/moab
 
 # Data
-export DATA=/scale-data
+export DATA=/scale-data/
 
 export num_procs=$(grep -c processor /proc/cpuinfo)
 

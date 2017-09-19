@@ -8,6 +8,7 @@
 # Default blas/lapack names given an ATLAS installation
 SET(LAPACK_LIBRARY_NAMES lapack CACHE STRING "")
 SET(BLAS_LIBRARY_NAMES blas CACHE STRING "")
+SET(SCLIB_FILEPATH "/scale-data/scale.rev39.sclib" CACHE FILEPATH "")
 
 SET(MPI_EXEC "/install/openmpi/bin/mpiexec" CACHE FILEPATH "")
 SET(CMAKE_CXX_COMPILER "/install/openmpi/bin/mpicxx" CACHE FILEPATH "" )
