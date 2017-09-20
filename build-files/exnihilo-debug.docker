@@ -20,6 +20,9 @@ ADD ./other-configs/install-files/exnihilo.sh /opt/Scale/Exnihilo/install/rc/doc
 ADD ./other-configs/install-files/exnihilo.cmake /opt/Scale/Exnihilo/install/rc/docker-rapidash/base.cmake
 ADD ./other-configs/install-files/codes/debug.cmake /opt/Scale/Exnihilo/install/codes/Exnihilo/docker-rapidash/debug.cmake
 
+# add single data lib
+ADD ./scale-data/ /scale-data/
+
 # install
 RUN cd /opt/Scale/Exnihilo/install/ \
  && ./install.sh -s docker-rapidash Exnihilo debug
